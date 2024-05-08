@@ -23,7 +23,9 @@ function ArticleList() {
         })
     }, [])
 
-    return isLoading ? (
+    return isError ? (
+            <p className="error">Ah! Something went wrong there ... :-(</p>
+        ) : isLoading ? (
         <p>
             Loading articles - please wait ...
         </p>

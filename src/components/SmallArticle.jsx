@@ -1,8 +1,14 @@
 import { useState } from 'react';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function SmallArticle({ article }) {
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate("/articles/"+article.article_id);
+        }
+
     return (
         <span className="small-box">
             <p className="small-box-category">{article.topic}</p>
@@ -11,7 +17,7 @@ function SmallArticle({ article }) {
             <p className="small-box-votes">{article.votes} votes</p>
             <p className="small-box-comments">{article.comment_count} comments</p>
             <img src={article.article_img_url} className="small-box-image"></img>
-            
+            <button className="small-box-button" onClick={handleClick}>More</button>
         </span>
     )
 }
