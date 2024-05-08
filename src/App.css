@@ -22,25 +22,40 @@ h1 {
   font-size: 2rem;
 }
 
+button {
+  background-color:lightcoral;
+}
+
+.back-button {
+  position:absolute;
+  justify-self: center;
+  height: 5vh;
+  bottom:0.2rem;
+}
+
 .small-box {
   display: grid;
   column-gap: 0.5rem;
-  grid-template-columns: repeat( 6, 1fr );
+  grid-template-columns: repeat( 5, 1fr );
   grid-template-rows: repeat(5, 1fr);
   grid-template-areas: 
-  'image image category category dateadded dateadded'
-  'image image title title title votes'
-  'image image title title title votes'
-  'image image title title title comments'
-  'image image button button button button';
-  width: min(80vw, 80vh);
-  height: 8rem;
+  'category category category dateadded dateadded'
+  'image image title title votes'
+  'image image title title comments'
+  'image image button button button';
+  width: 80vw;
+  height: 18vh;
   padding:0.2rem;
   margin:0.5rem;
   margin-left:0;
   font-size:0.5rem;
   text-align: left;
   border:0.6vw solid firebrick;
+  border-radius: 0.8rem;
+}
+
+.small-box-button {
+  padding:0;
 }
 
 .small-box-category {
@@ -59,19 +74,21 @@ h1 {
 
 .small-box-title {
   grid-area: title;
-  text-align: justify;
-  font-size: 150%;
+  text-align: left;
+  font-size: 140%;
+  height:7vh;
   width: 100%;
-  padding: 0;
-  margin: 0.5rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  overflow:scroll;
 }
 
 .small-box-image {
   grid-area: image;
-  width: 6rem; 
-  height: 6.5rem;
+  width: 20vw; 
+  height: 10vh;
   padding: 0;
-  margin: 0;
+  margin-left: 1rem;
 }
 
 .small-box-text {
@@ -96,4 +113,103 @@ h1 {
   border-bottom-style: solid;
   padding: 0;
   margin-bottom: 2rem;
+}
+
+.error {
+  margin-top: 6rem;
+  color:firebrick;
+  font-size: 200%;
+}
+
+.large-box {
+  display: grid;
+  column-gap: 0.5rem;
+  grid-template-columns: repeat( 3, 1fr );
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas: 
+  'category dateadded dateadded'
+  'image image title'
+  'text text text'
+  'votes comments comments';
+  /* 'votebuttons commentbuttons commentbuttons'; */
+  width: min(92vw, 92vh);
+  height: 65vh;
+  padding:0.2rem;
+  margin:0.5rem;
+  margin-left:0;
+  font-size:0.8rem;
+  border:0.6vw solid firebrick;
+  border-radius: 1rem;
+}
+
+.large-box-category {
+  grid-area: category;
+  font-size: 120%;
+  text-align: left;
+  padding:0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  height: 0.5rem;
+}
+
+.large-box-dateadded {
+  grid-area: dateadded;
+  font-size: 120%;
+  text-align: right;
+  padding:0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  height: 0.5rem;
+}
+
+.large-box-title {
+  grid-area: title;
+  position:relative;
+  text-align: left;
+  font-size: 140%;
+  width: 100%;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.large-box-image {
+  grid-area: image;
+  width: 40vw; 
+  height: 45vw;
+  padding: 0;
+  margin: 1rem;
+  justify-self:center;
+}
+
+.large-box-text {
+  grid-area: text;
+  font-size: 120%;
+  text-align: left;
+  padding: 0.6rem;
+  height: 20vh;
+  overflow:scroll;
+}
+
+.large-box-votes {
+  grid-area: votes;
+  text-align: left;
+  font-size: 100%;
+}
+
+.large-box-comments {
+  grid-area: comments;
+  text-align:right;
+  font-size: 100%;
+}
+
+.large-box-vote-buttons {
+  grid-area: votebuttons;
+  text-align: left;
+  font-size: 80%;
+}
+
+.large-box-comment-buttons {
+  grid-area: commentbuttons;
+  text-align: right;
+  font-size: 80%;
 }
