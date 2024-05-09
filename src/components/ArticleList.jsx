@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SmallArticle from './SmallArticle';
 
-function ArticleList() {
+function ArticleList({ userName }) {
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [articles, setArticles] = useState([]);
@@ -35,7 +35,7 @@ function ArticleList() {
                 {
                     articles.map((e) => {
                     return (
-                        <SmallArticle article={e} key={e.article_id} />
+                        <SmallArticle article={e} username={userName} key={e.article_id} />
                     );
                     })
                 }

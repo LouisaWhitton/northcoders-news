@@ -2,20 +2,23 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function Article () {
+function Article ({ userName, article, setArticle }) {
     const { article_id } = useParams();
     const navigate = useNavigate();
 
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-    const [article, setArticle] = useState([]);
-
+    
     const urlString = `https://louisaw-nc-news.onrender.com/api/articles/` + article_id;
 
     const handleClick = (e) => {
         e.preventDefault();
-        navigate("/articles");
+        if(e.target.firstChild.data === "Back to articles"){
+            navigate("/articles");
+        } else if(e.target.firstChild.data === "View comments") {
+            navigate(`/articles/${article_id}/comments`)
         }
+    }
 
     useEffect(() => {
         setIsLoading(true);
@@ -47,6 +50,9 @@ function Article () {
                 <p className="large-box-votes">{article.votes} votes</p>
                 <p className="large-box-comments">{article.comment_count} comments</p>
                 <img src={article.article_img_url} className="large-box-image"></img>
+                <div className="large-box-comment-buttons">
+                    <button onClick={handleClick}>View comments</button>
+                </div>
             </span>
             <button className="back-button" onClick={handleClick}>Back to articles</button>    
         </main>

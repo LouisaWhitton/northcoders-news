@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0;
-  padding: 4px;
+  padding: 1px;
   text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: medium;
@@ -10,6 +10,7 @@
 body {
   height: 100vh;
   width: 100vw;
+  margin: 0;
 }
 
 main {
@@ -22,8 +23,16 @@ h1 {
   font-size: 2rem;
 }
 
+h2 {
+  font-size: 1.5rem;
+  text-align: left;
+  padding: 0.2rem;
+}
+
 button {
   background-color:lightcoral;
+  width: 10vh;
+  text-wrap:wrap;
 }
 
 .back-button {
@@ -83,6 +92,25 @@ button {
   overflow:scroll;
 }
 
+.small-box-italic {
+  text-align: left;
+  font-size: 100%;
+  font-style: italic;
+  height: 4vh;
+  width: 100%;
+  padding: 0.4rem;
+  margin: 0;
+  border-top: 0.1rem;
+  border-color: firebrick;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-bottom: 0.1rem;
+  border-bottom-style: dashed;
+  border-bottom-color: firebrick;
+
+}
+
 .small-box-image {
   grid-area: image;
   width: 20vw; 
@@ -93,7 +121,9 @@ button {
 
 .small-box-text {
   grid-area: text;
+  text-align: left;
   font-size: 120%;
+  padding: 0;
 }
 
 .small-box-votes {
@@ -130,8 +160,8 @@ button {
   'category dateadded dateadded'
   'image image title'
   'text text text'
-  'votes comments comments';
-  /* 'votebuttons commentbuttons commentbuttons'; */
+  'votes comments comments'
+  'votebuttons commentbuttons commentbuttons';
   width: min(92vw, 92vh);
   height: 65vh;
   padding:0.2rem;
