@@ -46,6 +46,12 @@ textarea {
   bottom:0.2rem;
 }
 
+.button-submit {
+  grid-area: button;
+  height: 4vh;
+  margin: 0.4rem;
+}
+
 .small-box {
   display: grid;
   column-gap: 0.5rem;
@@ -65,6 +71,17 @@ textarea {
   text-align: left;
   border:0.6vw solid firebrick;
   border-radius: 0.8rem;
+}
+
+.small-span {
+  display: grid;
+  grid-template-columns: repeat( 3, 1fr );
+  grid-template-rows: repeat(3, 1fr );
+  grid-template-areas:
+  'title title title'
+  'text text text'
+  'button votes votes';
+  width: 90vw;
 }
 
 .small-box-button {
@@ -115,6 +132,7 @@ textarea {
 }
 
 .small-box-add-comment {
+  grid-area: title;
   text-align: left;
   font-size: 100%;
   font-style: italic;
@@ -149,6 +167,11 @@ textarea {
 
 .small-box-text-submitted {
   background-color: lightgreen;
+  color: gray;
+}
+
+.small-box-text-deleted {
+  background-color: lightcoral;
   color: gray;
 }
 
