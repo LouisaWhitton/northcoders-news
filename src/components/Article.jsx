@@ -72,7 +72,7 @@ function Article ({ userName, article, setArticle, userVotes, setUserVotes }) {
                     <button className={`plus-minus-button ${(voteCast !== 0) ? "disabled-button" : "" }`} onClick={handleClick}>-</button>
                 </div>
                 <div className="large-box-comment-buttons">
-                    <button onClick={handleClick}>View comments</button>
+                    <button onClick={handleClick}>View / add comments</button>
                 </div>
             </span>
             <button className="back-button" onClick={handleClick}>Back to articles</button>    
