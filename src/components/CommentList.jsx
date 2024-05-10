@@ -16,6 +16,9 @@ function CommentList( { userName, article } ) {
         setIsLoading(true);
         axios.get(urlString)
         .then((e) => {
+            if(!e.data.comments){
+                return Promise.reject("Not found");
+            }
             setComments(e.data.comments);
         })
         .then(() => {
@@ -34,7 +37,10 @@ function CommentList( { userName, article } ) {
     }
 
     return isError ? (
-            <p className="error">Ah! Something went wrong there ... :-(</p>
+        <main>
+            <p className="error">Sorry! No comments found! :-(</p>
+            <button className="back-button" onClick={handleClick}>Back to article</button> 
+        </main>
         ) : isLoading ? (
         <p>
             Loading comments - please wait ...
