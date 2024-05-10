@@ -151,6 +151,16 @@ button {
   font-size: 200%;
 }
 
+.plus-minus-button {
+  width: 4vh;
+  margin: 0.2rem;
+}
+
+.disabled-button {
+  background-color:lightgray;
+  color:gray;
+}
+
 .large-box {
   display: grid;
   column-gap: 0.5rem;
