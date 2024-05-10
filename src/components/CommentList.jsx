@@ -13,7 +13,7 @@ function CommentList( { userName, article } ) {
     const { article_id } = useParams();
     const navigate = useNavigate();
 
-    let urlString = `https://louisaw-nc-news.onrender.com/api/articles/` + article_id + "/comments";
+    const urlString = `https://louisaw-nc-news.onrender.com/api/articles/` + article_id + "/comments";
     let errorText = "Sorry! No comments found! :-(";
 
     useEffect(() => {
@@ -83,7 +83,7 @@ function CommentList( { userName, article } ) {
                 {
                     comments.map((e) => {
                     return (
-                        <SmallComment comment={e} userName={userName} key={e.comment_id} />
+                        <SmallComment comment={e} userName={userName} reload={reload} setReload={setReload} addedComments={addedComments} setAddedComments={setAddedComments} key={e.comment_id} />
                     );
                     })
                 }

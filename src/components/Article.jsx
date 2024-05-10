@@ -30,7 +30,7 @@ function Article ({ userName, article, setArticle, userVotes, setUserVotes }) {
         e.preventDefault();
         if(e.target.firstChild.data === "Back to articles"){
             navigate("/articles");
-        } else if(e.target.firstChild.data === "View comments") {
+        } else if(e.target.firstChild.data === "Go to comments") {
             navigate(`/articles/${article_id}/comments`)
         } else if(e.target.firstChild.data === "+") {
             setVoteCast(1);
@@ -72,7 +72,7 @@ function Article ({ userName, article, setArticle, userVotes, setUserVotes }) {
                     <button className={`plus-minus-button ${(voteCast !== 0) ? "disabled-button" : "" }`} onClick={handleClick}>-</button>
                 </div>
                 <div className="large-box-comment-buttons">
-                    <button onClick={handleClick}>View / add comments</button>
+                    <button onClick={handleClick}>Go to comments</button>
                 </div>
             </span>
             <button className="back-button" onClick={handleClick}>Back to articles</button>    
